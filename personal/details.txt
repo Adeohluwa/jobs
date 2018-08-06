@@ -1,0 +1,7 @@
+Full Name
+Email
+Phone
+Github
+Twitter
+LinkedIn
+Portfolio
