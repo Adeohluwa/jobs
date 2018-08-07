@@ -2,6 +2,7 @@
 
 import requests
 from bs4 import BeautifulSoup as parse
+import json
 
 url = "https://news.ycombinator.com/jobs"
 
