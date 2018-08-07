@@ -11,9 +11,10 @@ The Treasure Hunter is designed to scrape and apply for remote job listings on a
 The project requires Python 3. I assume you have Python3.x installed already
 
 Setting up is quick and easy. Just run 
-``` 
-pip install -r requirements.txt
-python apply.py
+
+```
+$ pip install -r requirements.txt
+$ python apply.py
 ``` 
 from the root of the project and you are good to go.
 
