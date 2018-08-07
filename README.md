@@ -26,5 +26,7 @@ beautifulsoup4, requests, lxml parser
 ### Contributors ###
 * Mustapha Yusuff
 * Skype : mustaphee94
+* Adeoluwa Adejumo
+* Skype : adeoluwa.adejumo
 
 #Add your name below
