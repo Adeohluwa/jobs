@@ -7,7 +7,7 @@ url = "https://news.ycombinator.com/jobs"
 
 response = requests.get(url)
 
-page = parse(response.content,'html.parser')    
+page = parse(response.content,'lxml')    
 headlines = page.select('a.storylink')
 
 for each in headlines:
