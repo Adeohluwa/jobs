@@ -1,9 +1,14 @@
 #!/usr/bin/env python3
 
 import requests
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup as parse
 
 url = "https://news.ycombinator.com/jobs"
 
-page = requests.get(url)
-print(page.content)
+response = requests.get(url)
+
+page = parse(response.content,'html.parser')    
+headlines = page.select('a.storylink')
+
+for each in headlines:
+  print(each.text)
