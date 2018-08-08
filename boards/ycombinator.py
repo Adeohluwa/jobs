@@ -28,10 +28,10 @@ def getPostings():
 # pretty print job results in JSON
 def postData():
   for ti,t,u in details:
-    posting = {'Title':ti,
-    # 'Company':c,
+    posting = {'Company Name': ti,
+    'Job Title':'N/A',
     'Url': u,
-    # 'Location':l,
+    'Location':'N/A',
     'Time':t
     }
     data = json.dumps(posting,indent=4)
