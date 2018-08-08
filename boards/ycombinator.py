@@ -3,7 +3,7 @@
 import requests
 from bs4 import BeautifulSoup as parse
 import json,re
-
+from geotext import GeoText
 
 # get job details
 def getPostings():
@@ -17,21 +17,20 @@ def getPostings():
   titles = [title.text for title in headlines]
   times = [time.text for time in timestamps]
   urls = [title['href'] for title in headlines]
+  locations = [GeoText(title).cities for title in titles]
   # companies = [re.findall(company,str(titles))]
   # print(titles)
-  # print(companies)
 
-  details = zip(titles,times,urls)
+  details = zip(titles,times,urls,locations)
   return details
-
 
 # pretty print job results in JSON
 def postData():
-  for ti,t,u in details:
+  for ti,t,u,l in details:
     posting = {'Company Name': ti,
     'Job Title':'N/A',
     'Url': u,
-    'Location':'N/A',
+    'Location':l[0] if l else 'N/A',
     'Time':t
     }
     data = json.dumps(posting,indent=4)
